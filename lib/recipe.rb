@@ -12,4 +12,12 @@ class Recipe
   def ingredients
     @ingredients_required.keys
   end
+
+  def total_calories
+    calories = 0
+    @ingredients_required.each do |ingredient, quantity|
+      calories += (ingredient.calories * quantity)
+    end
+    calories
+  end
 end
