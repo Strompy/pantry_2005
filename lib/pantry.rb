@@ -14,16 +14,18 @@ class Pantry
 
   def ingredient_in_pantry?(recipe)
     @stock.keys.all? do |ingredient|
-      require "pry"; binding.pry
       recipe.ingredient_names.include? (ingredient.name)
     end
   end
 
-  def enough_ingredient?(recipe)
-    pry
-  end
 
   def enough_ingredients_for?(recipe)
-    ingredient_in_pantry?(recipe) && enough_ingredient?(recipe)
+    if @stock.count != 0
+      @stock.keys.all? do |ingredient|
+      ingredient_in_pantry?(recipe) && stock[ingredient] >= recipe.ingredients_required[ingredient]
+      end
+    else
+    false
+    end
   end
 end
