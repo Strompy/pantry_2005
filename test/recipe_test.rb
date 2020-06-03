@@ -35,7 +35,7 @@ class RecipeTest < Minitest::Test
     @recipe1.add_ingredient(@ingredient1, 2)
     @recipe1.add_ingredient(@ingredient1, 4)
     @recipe1.add_ingredient(@ingredient2, 8)
-    expected = [@ingredient1, @ingredient]
+    expected = [@ingredient1, @ingredient2]
     assert_equal expected, @recipe1.ingredients
   end
 end
