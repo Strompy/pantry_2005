@@ -14,4 +14,12 @@ class PantryTest < Minitest::Test
     expected = {}
     assert_equal expected, pantry.stock
   end
+
+  def test_it_can_check_stock
+    pantry = Pantry.new
+    ingredient1 = Ingredient.new({name: "Cheese", unit: "oz", calories: 50})
+    assert_equal 0, pantry.stock_check(ingredient1)
+  end
+
+  
 end
