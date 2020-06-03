@@ -49,4 +49,9 @@ class RecipeTest < Minitest::Test
     expected = [@ingredient1, @ingredient2]
     assert_equal expected, @recipe1.ingredients
   end
+
+  def test_it_can_calculate_total_calories
+    assert_equal 440, @recipe1.total_calories
+    assert_equal 675, @recipe2.total_calories
+  end
 end
