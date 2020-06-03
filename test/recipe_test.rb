@@ -30,4 +30,12 @@ class RecipeTest < Minitest::Test
     }
     assert_equal expected, @recipe1.ingredients_required
   end
+
+  def test_it_can_list_ingredients
+    @recipe1.add_ingredient(@ingredient1, 2)
+    @recipe1.add_ingredient(@ingredient1, 4)
+    @recipe1.add_ingredient(@ingredient2, 8)
+    expected = [@ingredient1, @ingredient]
+    assert_equal expected, @recipe1.ingredients
+  end
 end
