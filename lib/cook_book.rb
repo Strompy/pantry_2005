@@ -7,4 +7,13 @@ class CookBook
   def add_recipe(recipe)
     @recipes << recipe
   end
+
+  def ingredients
+    names = []
+    @recipes.each do |recipe|
+      names << recipe.ingredient_names
+      names.flatten!
+    end
+    names.uniq
+  end
 end
