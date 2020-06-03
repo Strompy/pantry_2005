@@ -54,4 +54,9 @@ class RecipeTest < Minitest::Test
     assert_equal 440, @recipe1.total_calories
     assert_equal 675, @recipe2.total_calories
   end
+
+  def test_it_can_list_ingredients_names
+    expected = ["Cheese", "Macaroni"]
+    assert_equal expected, @recipe1.ingredient_names
+  end
 end
