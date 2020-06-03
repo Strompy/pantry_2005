@@ -13,6 +13,12 @@ class Recipe
     @ingredients_required.keys
   end
 
+  def ingredient_names
+    ingredients.map do |ingredient|
+      ingredient.name
+    end
+  end
+
   def total_calories
     calories = 0
     @ingredients_required.each do |ingredient, quantity|
