@@ -29,4 +29,7 @@ class CookBook
     @date.strftime("%m-%d-%Y")
   end
 
+  def summary
+  end
+
 end
